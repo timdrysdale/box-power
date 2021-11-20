@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP Barrel_Jack_Switch_DC10B
+D DC Barrel Jack with an internal switch
+K DC power barrel jack connector
+F ~
+$ENDCMP
+#
 $CMP i6A4W010A033V-001-R
 F https://www.farnell.com/datasheets/3312958.pdf
 $ENDCMP

@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:Screw_Terminal_01x02 JIN_24V+1
+L Connector:Screw_Terminal_01x02 JIN_24V+
 U 1 1 6198120D
 P 1500 1800
-F 0 "JIN_24V+1" H 1750 1700 50  0000 C CNN
+F 0 "JIN_24V+" H 1750 1700 50  0000 C CNN
 F 1 "Screw_Terminal_01x02" H 2000 1800 50  0000 C CNN
 F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1500 1800 50  0001 C CNN
 F 3 "~" H 1500 1800 50  0001 C CNN
@@ -315,7 +315,7 @@ U 1 1 619E674B
 P 7450 4500
 F 0 "J2" H 7220 4450 50  0000 R CNN
 F 1 "Barrel_Jack_Switch_DC10B" H 7220 4541 50  0000 R CNN
-F 2 "box_power:BarrelJack_Horizontal_DC10B" H 7500 4460 50  0001 C CNN
+F 2 "box_power:USB_A_Multicomp_horizontal_receptable" H 7500 4460 50  0001 C CNN
 F 3 "~" H 7500 4460 50  0001 C CNN
 	1    7450 4500
 	-1   0    0    1   
@@ -326,7 +326,7 @@ U 1 1 619E759B
 P 7450 4850
 F 0 "J3" H 7220 4800 50  0000 R CNN
 F 1 "Barrel_Jack_Switch_DC10B" H 7220 4891 50  0000 R CNN
-F 2 "box_power:BarrelJack_Horizontal_DC10B" H 7500 4810 50  0001 C CNN
+F 2 "box_power:USB_A_Multicomp_horizontal_receptable" H 7500 4810 50  0001 C CNN
 F 3 "~" H 7500 4810 50  0001 C CNN
 	1    7450 4850
 	-1   0    0    1   
@@ -337,7 +337,7 @@ U 1 1 619E7A04
 P 7450 5200
 F 0 "J4" H 7220 5150 50  0000 R CNN
 F 1 "Barrel_Jack_Switch_DC10B" H 7220 5241 50  0000 R CNN
-F 2 "box_power:BarrelJack_Horizontal_DC10B" H 7500 5160 50  0001 C CNN
+F 2 "box_power:USB_A_Multicomp_horizontal_receptable" H 7500 5160 50  0001 C CNN
 F 3 "~" H 7500 5160 50  0001 C CNN
 	1    7450 5200
 	-1   0    0    1   
@@ -348,7 +348,7 @@ U 1 1 61A01F4C
 P 7450 5600
 F 0 "J5" H 7220 5550 50  0000 R CNN
 F 1 "Barrel_Jack_Switch_DC10B" H 7220 5641 50  0000 R CNN
-F 2 "box_power:BarrelJack_Horizontal_DC10B" H 7500 5560 50  0001 C CNN
+F 2 "box_power:USB_A_Multicomp_horizontal_receptable" H 7500 5560 50  0001 C CNN
 F 3 "~" H 7500 5560 50  0001 C CNN
 	1    7450 5600
 	-1   0    0    1   
@@ -359,7 +359,7 @@ U 1 1 61A0270C
 P 7450 6000
 F 0 "J6" H 7220 5950 50  0000 R CNN
 F 1 "Barrel_Jack_Switch_DC10B" H 7220 6041 50  0000 R CNN
-F 2 "box_power:BarrelJack_Horizontal_DC10B" H 7500 5960 50  0001 C CNN
+F 2 "box_power:USB_A_Multicomp_horizontal_receptable" H 7500 5960 50  0001 C CNN
 F 3 "~" H 7500 5960 50  0001 C CNN
 	1    7450 6000
 	-1   0    0    1   
@@ -493,10 +493,10 @@ Text GLabel 7100 3900 0    50   Input ~ 0
 Text GLabel 7100 4000 0    50   Input ~ 0
 GND_12V
 $Comp
-L Connector:Screw_Terminal_01x02 JOUT_24V-1
+L Connector:Screw_Terminal_01x02 JOUT_24V-
 U 1 1 61A4DDF8
 P 1500 2200
-F 0 "JOUT_24V-1" H 1800 2100 50  0000 C CNN
+F 0 "JOUT_24V-" H 1800 2100 50  0000 C CNN
 F 1 "Screw_Terminal_01x02" H 2000 2200 50  0000 C CNN
 F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 1500 2200 50  0001 C CNN
 F 3 "~" H 1500 2200 50  0001 C CNN

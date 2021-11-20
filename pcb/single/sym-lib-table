@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name box_power)(type Legacy)(uri /home/tim/sources/box-power/lib/box_power.lib)(options "")(descr ""))
+  (lib (name single-rescue)(type Legacy)(uri ${KIPRJMOD}/single-rescue.lib)(options "")(descr ""))
 )
