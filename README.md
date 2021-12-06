@@ -245,3 +245,89 @@ Part no.	Description	Quantity	Price
 13	1083279	YR1B1K82CC Through Hole Resistor, 1.82 kohm, R Series, 250 mW, ± 0.1%, Axial Leaded, 500 V	50	£0.37
 14	9503005	RC55Y-8K45BI Through Hole Resistor, 8.45 kohm, RC Series, 250 mW, ± 0.1%, Axial Leaded, 350 V	10	£1.24
 Total: £2911.34
+
+
+# Track sizing thoughts....
+
+if not using both sides of the board, better to go to 7mm AND 2oz copper, and keep temp rise down to 15deg.
+
+# Reverse polarity protection
+
+There are several options we can consider - just using a MOSFET, adding a ORING controller such LM5050 (not in stock at JLCPCB, no DIP package?), or IDP90PO3P4L-04 (check code!) as used in the infineon DC motor shield. The TI part LM5050 seems to use a number of external components.
+
+Designing a simple MOSFET based system is described by [TI application note](https://www.ti.com/lit/an/slva139/slva139.pdf?ts=1637407408575).
+
+Main consideration is getting low R_DS_ON, with power dissipation being R_DS_ON * I_LOAD.
+
+world's lowest RDS_on at 30V, intended for reverse voltage protection:
+https://www.infineon.com/dgdl/Infineon-I80P03P4L_04-DS-v01_01-en.pdf?fileId=db3a30431ddc9372011e07e95eb827d7
+
+-80A continuous drain current
+VGS+5/-16V ??
+Ptot 137W
+VDSmax for breakdown 30V
+7mOhm x 10A = 7e-3x100 = 7x0.1 = 0.7W, compared to 240W total power, so <1% 
+
+but not recommended for new designs
+
+Maybe this:-
+https://uk.farnell.com/vishay/sqp100p06-9m3l-ge3/mosfet-p-ch-60v-100a-175deg-c/dp/3470727
+
+suggested safety margin of nearly x2 on VDS, and use of zener for protection of VDS
+https://components101.com/articles/design-guide-pmos-mosfet-for-reverse-voltage-polarity-protection
+
+lead size 1.01mm max, wide side of legs (wide side of body), 0.36 - 0.61mm narrow side 
+spacing iunside to outside leg 2.4-2.67mm, outside legs 4.88 - 5.28mm (so 5mm nominal)
+
+Pin order left to right from front: GDS 
+
+package: TO 220AB
+
+Connections:
+
+VBAT goes to DRAIN
+GATE Goes to resistor/zener junction
+SOURCE goes to top of zener, and top of load.
+bottom of resistor goes to ground.
+
+See [Infineon Application note for tradeoffs between diode, N-channel with charge pump and P-channel](https://www.infineon.com/dgdl/Reverse-Batery-Protection-Rev2.pdf?fileId=db3a304412b407950112b41887722615)
+
+Package_TO_SOT_THT:TO-220-3_Vertical
+
+
+
+## Zener diode
+
+Since VGS max is +/-20V, choose 18V Zener. 5% is 0.9V.
+
+https://uk.farnell.com/nexperia/bzx79-c18-133/diode-zener-0-5w-18v-do-35/dp/1097219?st=zener%20diode
+
+Body length 4.25mm, diameter 1.85mm, lead size 0.56mm max
+DO-35
+
+Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal
+
+## bias resistor
+
+Zener power dissipation is 500mW, so at 18V would be 27mA current max. Call it 20mA
+
+Expect a reverse voltage of 24V, so 6V to drop across resistor. MAx current 20mA
+V=IR so R = V/I = 6/20mA = 300R
+
+this should be consistent with a fast enough switch for reverse polarity protection.
+
+MFR4-300RFI 0.5W 6.2mm body length max, diamter 2.5mm professional version
+
+Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+
+## HEATSINK
+
+possibly this one....
+
+	MC33278
+
+
+
+
+
+
